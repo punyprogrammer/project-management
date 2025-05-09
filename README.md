@@ -6,3 +6,6 @@ https://github.com/punyprogrammer/project-management/pull/1
 
 ### Backend setup with prisma and data-seeder
 https://github.com/punyprogrammer/project-management/pull/2
+
+### Express setup 
+https://github.com/punyprogrammer/project-management/pull/3

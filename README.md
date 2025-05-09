@@ -9,3 +9,6 @@ https://github.com/punyprogrammer/project-management/pull/2
 
 ### Express setup 
 https://github.com/punyprogrammer/project-management/pull/3
+
+### Reset index 
+`SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";

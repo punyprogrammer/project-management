@@ -5,4 +5,4 @@ https://github.com/punyprogrammer/project-management/commit/389cfc00de786b459c01
 https://github.com/punyprogrammer/project-management/pull/1
 
 ### Backend setup with prisma and data-seeder
-https://github.com/punyprogrammer/project-management/pull/1
+https://github.com/punyprogrammer/project-management/pull/2

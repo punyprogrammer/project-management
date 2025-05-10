@@ -23,20 +23,20 @@ import React, { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useGetProjectsQuery } from "@/app/state/api";
 
 function Sidebar() {
   const dispatch = useAppDispatch();
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed
   );
+  const { data: projects } = useGetProjectsQuery();
   const [showProjects, setShowProjects] = useState(false);
   const [showPriorities, setShowPriorities] = useState(false);
   const sidebarClassNames = `flex flex-col h-screen justify-between shadow-xl
   transition-[width] duration-300 z-40 dark:bg-black overflow-y-scroll bg-white
   ${isSidebarCollapsed ? "w-0" : "w-96 sm:w-64"}`;
-  useEffect(() => {
-    console.log(showProjects);
-  }, [showProjects]);
+
   return (
     <div className={clsx(sidebarClassNames)}>
       <div
@@ -87,6 +87,18 @@ function Sidebar() {
               className={`h-5 w-5 transition-transform duration-300 ease-in ${showProjects ? "rotate-180" : "rotate-0"}`}
             />
           </button>
+          {showProjects && (
+            <>
+              {projects?.map(({ name, id }) => (
+                <SidebarLink
+                  href={`/projects/${id}`}
+                  label={name}
+                  icon={Briefcase}
+                  key={id}
+                />
+              ))}
+            </>
+          )}
           {/* Priorites */}
           <button
             onClick={() => setShowPriorities(!showPriorities)}

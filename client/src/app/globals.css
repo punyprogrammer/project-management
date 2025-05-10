@@ -16,9 +16,11 @@ body,
   width: 100%;
   @apply text-sm;
   @apply bg-white;
-  @apply dark:bg-black;
+ 
 }
-
+html .dark{
+  @apply dark:bg-black !important;
+}
 /* TIMELINE STYLING */
 .timeline ._3_ygE {
   @apply rounded-tl-md border border-r-0 border-[#e6e4e4] dark:border-stroke-dark;

@@ -25,11 +25,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useGetProjectsQuery } from "@/app/state/api";
 
-function Sidebar() {
+function Sidebar({ isSidebarCollapsed }: { isSidebarCollapsed: boolean }) {
   const dispatch = useAppDispatch();
-  const isSidebarCollapsed = useAppSelector(
-    (state) => state.global.isSidebarCollapsed
-  );
   const { data: projects } = useGetProjectsQuery();
   const [showProjects, setShowProjects] = useState(false);
   const [showPriorities, setShowPriorities] = useState(false);
@@ -170,7 +167,7 @@ const SidebarLink = ({
         className={`m-2 py-3 px-6 rounded-md relative flex cursor-pointer items-center gap-3 transition-colors ease-in duration-300 hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-700  ${isActive ? "bg-gray-100 text-white dark:bg-gray-600" : ""}`}
       >
         {isActive && (
-          <div className="absolute bg-blue-200 h-full w-[5px]"></div>
+          <div className="absolute left-0 bg-blue-200 h-full w-[5px]"></div>
         )}
         <Icon className="h-6 w-6 text-gray-800 dark:text-gray-100" />
         <span className="font-medium text-gray-800 dark:text-gray-100">

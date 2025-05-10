@@ -10,6 +10,9 @@ const DashboardLayout = ({
   children: React.ReactNode;
 }): React.ReactNode => {
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
+  const isSidebarCollapsed = useAppSelector(
+    (state) => state.global.isSidebarCollapsed
+  );
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -18,12 +21,14 @@ const DashboardLayout = ({
     }
   }, [isDarkMode]);
   return (
-    <div className="flex min-h-screen w-full bg-gray-50 text-gray-900">
-      <Sidebar />
-      <main className={`flex w-full flex-col bg-gray-50 dark:bg-dark-bg `}>
+    <div className="flex h-screen w-full bg-gray-50 text-gray-900">
+      <Sidebar isSidebarCollapsed={isSidebarCollapsed} />
+      <main
+        className={`transition-transform ease-in duration-300 ${!isSidebarCollapsed ? "max-w-[calc(100vw-160px)]" : ""} flex sm:w-full flex-col bg-gray-50 dark:bg-dark-bg   `}
+      >
         {/* navbar */}
         <Navbar />
-        {children}
+        <div className="overflow-y-scroll">{children}</div>
       </main>
     </div>
   );

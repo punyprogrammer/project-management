@@ -11,13 +11,13 @@ function ProjectHeader({ activeTab, setActiveTab }: Props) {
   const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
 
   return (
-    <div className="px-4 xl:px-6">
+    <div className="px-2 sm:px-4 xl:px-6">
       <div className="pb-6 pt-6 lg:pb-4 lg:pt-8">
         <Header name="Project Design and Development" />
       </div>
       {/* Tabs */}
-      <div className="flex justify-between px-4 flex-wrap-reverse gap-2 border  border-gray-200 pb-[8px] pt-2 dark:border-stroke-dark md:items-center">
-        <div className="flex flex- items-center gap-2 md:gap-4">
+      <div className="flex justify-between px-2 sm:px-4 flex-wrap-reverse gap-2 border  border-gray-200 pb-[8px] pt-2 dark:border-stroke-dark md:items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4">
           <TabButton
             name="Board"
             activeTab={activeTab}
@@ -55,7 +55,7 @@ function ProjectHeader({ activeTab, setActiveTab }: Props) {
             <input
               type="text"
               placeholder="Search Tasks"
-              className="rounded-md border py-1 pl-10 pr-4 focus:outline-none dark:border-dark-secondary dark:bg-dark-secondary dark:text-white"
+              className="w-full rounded-md border py-1 pl-10 pr-4 focus:outline-none dark:border-dark-secondary dark:bg-dark-secondary dark:text-white"
             />
             <Grid3X3 className="absolute left-3 top-2 size-4 text-gray-400 dark:text-neutral-500" />
           </div>
@@ -74,7 +74,7 @@ const TabButton = ({ name, icon, setActiveTab, activeTab }: TabButtonProps) => {
   const isActiveTab = name === activeTab;
   return (
     <button
-      className={`relative flex items-center gap-2 px-1 after:transition-all after:duration-300 after:ease-in text-gray-500 after:absolute after:-bottom-[13px] after:left-0 after:h-[2px] after:w-full   dark:text-white sm:px-2  hover:text-blue-600 ${isActiveTab ? "!text-blue-600 after:bg-blue-600 " : ""}`}
+      className={`relative flex items-center gap-2 px-1 after:transition-all after:duration-300 after:ease-in text-gray-500 after:absolute after:-bottom-[13px] after:left-0 after:sm:h-[2px] after:h-0 after:w-full   dark:text-white sm:px-2  hover:text-blue-600 ${isActiveTab ? "!text-blue-600 after:bg-blue-600 " : ""}`}
       onClick={() => setActiveTab(name)}
     >
       {icon}

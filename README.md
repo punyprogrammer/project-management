@@ -13,6 +13,9 @@ https://github.com/punyprogrammer/project-management/pull/3
 ### Add initial endpoints for tasks and projects
 https://github.com/punyprogrammer/project-management/pull/4
 
+### Initial RTK queries and mutations
+https://github.com/punyprogrammer/project-management/pull/5
+
 ### Reset index 
 `SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";
 Sample for table project SELECT setval(pg_get_serial_sequence('"Project"', 'id'), coalesce(max(id)+1, 1), false) FROM "Project";

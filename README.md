@@ -23,6 +23,8 @@ https://github.com/punyprogrammer/project-management/pull/6
 https://github.com/punyprogrammer/project-management/pull/7
 ### Complete List View
 https://github.com/punyprogrammer/project-management/pull/8
+### Complete timeline view
+https://github.com/punyprogrammer/project-management/pull/9
 
 ### Reset index 
 `SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";

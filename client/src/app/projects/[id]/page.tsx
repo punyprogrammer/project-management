@@ -1,6 +1,7 @@
 "use client";
 
 import BoardView from "@/components/Projects/BoardView/BoardView";
+import ListView from "@/components/Projects/ListView/ListView";
 import ProjectHeader from "@/components/Projects/ProjectHeader";
 import { useState } from "react";
 
@@ -17,6 +18,9 @@ const Project = ({ params }: Props) => {
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab === "Board" && (
         <BoardView setIsNewTaskModalOpen={setIsNewTaskModalOpen} id={id} />
+      )}
+      {activeTab === "List" && (
+        <ListView id={id} setIsNewTaskModalOpen={setIsNewTaskModalOpen} />
       )}
     </div>
   );

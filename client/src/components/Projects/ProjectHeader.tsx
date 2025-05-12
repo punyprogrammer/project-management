@@ -1,19 +1,41 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
-import { Clock, Filter, Grid3X3, List, Share2, Table } from "lucide-react";
+import {
+  Clock,
+  Filter,
+  Grid3X3,
+  List,
+  PlusSquareIcon,
+  Share2,
+  Table,
+} from "lucide-react";
 
 type Props = {
   activeTab: string;
   setActiveTab: (tabName: string) => void;
+  setIsNewProjectModalOpen: (isOpen: boolean) => void;
 };
 
-function ProjectHeader({ activeTab, setActiveTab }: Props) {
-  const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
-
+function ProjectHeader({
+  activeTab,
+  setActiveTab,
+  setIsNewProjectModalOpen,
+}: Props) {
   return (
     <div className="px-2 sm:px-4 xl:px-6">
       <div className="pb-6 pt-6 lg:pb-4 lg:pt-8">
-        <Header name="Project Design and Development" />
+        <Header
+          name="Project Design and Development"
+          buttonComponent={
+            <button
+              className="flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300 ease-in rounded-md gap-1"
+              onClick={() => setIsNewProjectModalOpen(true)}
+            >
+              <PlusSquareIcon className="h-5 w-5" />
+              <span>New Project</span>
+            </button>
+          }
+        />
       </div>
       {/* Tabs */}
       <div className="flex justify-between px-2 sm:px-4 flex-wrap-reverse gap-2 border  border-gray-200 pb-[8px] pt-2 dark:border-stroke-dark md:items-center">

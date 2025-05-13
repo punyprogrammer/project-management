@@ -10,6 +10,7 @@ import cors from "cors"; // Enables Cross-Origin Resource Sharing
 import projectRoutes from "./routes/projectRoutes";
 import taskRoutes from "./routes/taskRoutes";
 import searchRoutes from "./routes/searchRoutes";
+import userRoutes from "./routes/userRoutes";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -33,6 +34,7 @@ app.use(cors()); // Enable CORS for all routes
 app.use("/projects", projectRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/search", searchRoutes);
+app.use("/users", userRoutes);
 // Root route - responds to GET requests at the root URL
 app.get("/", (req, res) => {
   res.send("This is the home router"); // Send a simple text response

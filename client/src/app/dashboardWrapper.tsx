@@ -20,11 +20,12 @@ const DashboardLayout = ({
       document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
+  // ${!isSidebarCollapsed ? "max-w-[calc(100vw-160px)]" : ""}
   return (
     <div className="flex h-screen w-full bg-gray-50 text-gray-900">
       <Sidebar isSidebarCollapsed={isSidebarCollapsed} />
       <main
-        className={`transition-transform ease-in duration-300 ${!isSidebarCollapsed ? "max-w-[calc(100vw-160px)]" : ""} flex sm:w-full flex-col bg-gray-50 dark:bg-dark-bg   `}
+        className={`transition-transform ease-in duration-300  flex w-full flex-col bg-gray-50 dark:bg-dark-bg   `}
       >
         {/* navbar */}
         <Navbar />

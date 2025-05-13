@@ -32,6 +32,9 @@ https://github.com/punyprogrammer/project-management/pull/10
 ## Complete Create new Task and Create new Project 
 https://github.com/punyprogrammer/project-management/pull/11
 
+## Complete Backend API 
+https://github.com/punyprogrammer/project-management/pull/12
+
 ### Reset index 
 `SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";
 Sample for table project SELECT setval(pg_get_serial_sequence('"Project"', 'id'), coalesce(max(id)+1, 1), false) FROM "Project";

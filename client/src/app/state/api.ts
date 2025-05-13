@@ -80,7 +80,7 @@ export const api = createApi({
   reducerPath: "api",
 
   // Defines the tag types used for cache management and automatic invalidation
-  tagTypes: ["Projects", "Tasks"],
+  tagTypes: ["Projects", "Tasks", "Users"],
 
   // Defining the API endpoints (queries and mutations) that can be used in components or hooks
   endpoints: (build) => ({
@@ -143,6 +143,10 @@ export const api = createApi({
     search: build.query<SearchResults, string>({
       query: (query) => `search?query=${query}`,
     }),
+    getUsers: build.query<User[], void>({
+      query: () => `users`,
+      providesTags: ["Users"],
+    }),
   }),
 });
 
@@ -153,4 +157,5 @@ export const {
   useCreateTaskMutation,
   useUpdateTaskStatusMutation,
   useSearchQuery,
+  useGetUsersQuery
 } = api;

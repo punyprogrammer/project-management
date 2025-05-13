@@ -11,6 +11,7 @@ import projectRoutes from "./routes/projectRoutes";
 import taskRoutes from "./routes/taskRoutes";
 import searchRoutes from "./routes/searchRoutes";
 import userRoutes from "./routes/userRoutes";
+import teamRoutes from "./routes/teamRoutes";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -35,6 +36,7 @@ app.use("/projects", projectRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/search", searchRoutes);
 app.use("/users", userRoutes);
+app.use("/teams", teamRoutes);
 // Root route - responds to GET requests at the root URL
 app.get("/", (req, res) => {
   res.send("This is the home router"); // Send a simple text response

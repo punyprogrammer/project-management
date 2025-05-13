@@ -8,7 +8,7 @@ type Props = {
 
 const UserCard = ({ user }: Props) => {
   return (
-    <div className="w-full flex items-center p-2 rounded-lg bg-white shadow-slate-500 border-gray-700 dark:bg-dark-secondary">
+    <div className="w-full flex items-center p-2 rounded-lg bg-white shadow-slate-300 shadow-sm  border-gray-700 dark:bg-dark-secondary ">
       {user?.profilePictureUrl && (
         <Image
           src={`/${user.profilePictureUrl}`}

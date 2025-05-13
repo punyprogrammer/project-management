@@ -32,7 +32,7 @@ https://github.com/punyprogrammer/project-management/pull/10
 ## Complete Create new Task and Create new Project 
 https://github.com/punyprogrammer/project-management/pull/11
 
-## Complete Backend API 
+## Complete Backend API for search
 https://github.com/punyprogrammer/project-management/pull/12
 
 ### Reset index 

@@ -44,9 +44,9 @@ app.get("/", (req, res) => {
 
 // Server setup
 
-const port = process.env.PORT || 8000; // Use PORT from .env or default to 8000
+const port = Number(process.env.PORT) || 8000; // Use PORT from .env or default to 8000
 
 // Start the server and listen on the specified port
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`The backend is running on port ${port}`);
 });

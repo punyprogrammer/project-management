@@ -47,6 +47,9 @@ https://github.com/punyprogrammer/project-management/pull/15
 ## Complete Priority Page
 https://github.com/punyprogrammer/project-management/pull/16
 
+## Add ecosystem config.js
+https://github.com/punyprogrammer/project-management/pull/17
+
 ### Reset index 
 `SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";
 Sample for table project SELECT setval(pg_get_serial_sequence('"Project"', 'id'), coalesce(max(id)+1, 1), false) FROM "Project";

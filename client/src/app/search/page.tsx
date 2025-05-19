@@ -50,7 +50,7 @@ const Search = () => {
         <p className="text-gray-500">No results found.</p>
       )}
 
-      {result?.tasks?.length > 0 && (
+      {result?.tasks && result?.tasks?.length > 0 && (
         <Section title="Tasks">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {result.tasks.map((task) => (
@@ -60,7 +60,7 @@ const Search = () => {
         </Section>
       )}
 
-      {result?.projects?.length > 0 && (
+      {result?.projects && result?.projects?.length > 0 && (
         <Section title="Projects">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {result.projects.map((project) => (
@@ -70,7 +70,7 @@ const Search = () => {
         </Section>
       )}
 
-      {result?.users?.length > 0 && (
+      {result?.users && result?.users?.length > 0 && (
         <Section title="Users">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-2">
             {result.users.map((user) => (
